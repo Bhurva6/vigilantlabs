@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+[data-theme="dark"] {
+  --background: #0B0D10;
+  --foreground: #FFFFFF;
+  --sidebar-bg: #0B0D10;
+  --sidebar-active: #00FOC8;
+  --sidebar-hover: #2A2F36;
+  --card-bg: #1A1F24;
+  --neutral-1: #2A2F36;
+  --neutral-2: #3A414A;
+  --neutral-3: #BFC7CF;
+  --neutral-4: #E6EDF3;
+  --accent-cyan: #00FOC8;
+  --accent-green: #A3FF12;
+  --accent-red: #FF2E2E;
+}
+
+[data-theme="light"] {
+  --background: #E6EDF3;
+  --foreground: #0B0D10;
+  --sidebar-bg: #FFFFFF;
+  --sidebar-active: #00FOC8;
+  --sidebar-hover: #BFC7CF;
+  --card-bg: #FFFFFF;
+  --neutral-1: #BFC7CF;
+  --neutral-2: #E6EDF3;
+  --neutral-3: #3A414A;
+  --neutral-4: #2A2F36;
+  --accent-cyan: #00FOC8;
+  --accent-green: #A3FF12;
+  --accent-red: #FF2E2E;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+.data-label {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.card-bg {
+  background: var(--card-bg);
+}
+.sidebar-bg {
+  background: var(--sidebar-bg);
+}
+.sidebar-active {
+  background: var(--sidebar-active) !important;
+  color: #0B0D10 !important;
+}
+.sidebar-hover {
+  background: var(--sidebar-hover) !important;
+}
