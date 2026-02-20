@@ -68,23 +68,21 @@ export default function Sidebar({
               )}
               <div className="space-y-1">
                 {items.map((useCase) => (
-                  <button
+                  <li
                     key={useCase.id}
-                    onClick={() => onUseCaseSelect(useCase.id)}
-                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors font-medium ${
+                    className={`mb-2 rounded-lg transition-colors cursor-pointer ${
                       selectedUseCase === useCase.id
-                        ? 'sidebar-active'
-                        : 'hover:sidebar-hover opacity-90'
+                        ? 'bg-[var(--accent-cyan)]' // accent background for selected
+                        : 'hover:bg-[var(--neutral-1)]'
                     }`}
-                    style={selectedUseCase === useCase.id ? { background: 'var(--sidebar-active)', color: '#0B0D10' } : { color: 'var(--foreground)' }}
-                    title={isOpen ? '' : useCase.name}
+                    style={{
+                      color: selectedUseCase === useCase.id ? 'var(--background)' : 'var(--foreground)',
+                      fontWeight: selectedUseCase === useCase.id ? 700 : 500,
+                    }}
+                    onClick={() => onUseCaseSelect(useCase.id)}
                   >
-                    {isOpen && (
-                      <span className="text-sm font-medium truncate" style={{ color: 'inherit' }}>
-                        {useCase.name}
-                      </span>
-                    )}
-                  </button>
+                    {useCase.name}
+                  </li>
                 ))}
               </div>
             </div>
